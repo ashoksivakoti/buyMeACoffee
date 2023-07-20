@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { contractABI, contractAddress } from '../utils/constants'
 import { ethers } from 'ethers'
 import logo from '../images/coffeeLogo.png'
+import coffee from '../images/coffee.png'
 
 const { ethereum } = window;
 
@@ -48,7 +49,7 @@ try {
 const connectWallet = async () => {
 try {
     if (!ethereum) {
-        console.log("please install MetaMask");
+        alert("please install MetaMask");
     }
     const accounts = await ethereum.request({
         method: 'eth_requestAccounts'
@@ -141,10 +142,10 @@ useEffect(() => {
 return (
     <>
 <div className="relative min-h-screen">
-  <div className="absolute inset-0 bg-gradient-to-r from-[#01BAEF] to-[#20BF55] "></div>
+  <div className="absolute inset-0 bg-gradient-to-r from-[#0D0208] to-[#001d00] "></div>
   <div className="relative container mx-auto px-4 py-8 text-center z-10">
   <div class="flex items-center justify-center mb-4">
-    <h1 className="text-8xl font-bold text-black py-8 text-gradient">Buy Hasher a Coffee!</h1>
+    <h1 className="text-8xl font-bold text-[#808080] py-8 text-gradient">Buy Hasher a Coffee!</h1>
     <img src={logo} alt="Coffee Logo" className="w-10 h-15 ml-5" />
     </div>
     {/* <p className="text-white text-lg">Show your appreciation and support Hasher by buying them a coffee.</p> */}
@@ -152,30 +153,30 @@ return (
       <div className="mt-8">
         <form className="max-w-lg mx-auto">
           <div className="mb-4">
-            <input id="name" type="text" placeholder="Name" className="border p-2 rounded w-full blue-glassmorphism" onChange={onNameChange} />
+            <input id="name" type="text" placeholder="Name" className="border p-2 rounded w-full text-white white-glassmorphism" onChange={onNameChange} />
           </div>
           <div className="mb-4">
-            <textarea placeholder="Leave a message to Hasher" id="message" onChange={onMessageChange} required className="border p-2 rounded w-full blue-glassmorphism"></textarea>
+            <input placeholder="Leave a message to Hasher" id="message" onChange={onMessageChange} required className="border p-2 rounded w-full text-white white-glassmorphism" />
           </div>
           <div>
-            <button type="button" onClick={buyCoffee} className="bg-gradient-to-r from-[#F2A65A] to-[#A55C1B] text-white px-4 py-2 border-[#A55C1B] border-b-4 rounded">Send 1 Coffee for 0.001ETH</button>
+            <button type="button" onClick={buyCoffee} className="bg-[#808080] text-black font-bold px-4 py-2 rounded">Send 1 Coffee for 0.001ETH</button>
           </div>
         </form>
       </div>
     ) : (
-      <button onClick={connectWallet} className="bg-[#e87e22] hover:bg-[#fa8f24] text-white font-bold py-2 px-4 border-b-4 border-[#904f17] hover:border-[#a35a1b] rounded mt-20">Connect your wallet</button>
+      <button onClick={connectWallet} className="bg-[#808080] hover:bg-white text-black font-bold py-2 px-4 rounded mt-20">Connect your wallet</button>
     )}
 
     {currentAccount && (
       <div className="p-4 overflow-y-auto max-h-96">
-        <h2 className="text-4xl font-bold text-[#5d4f1a] my-10 flex">Memos received</h2>
+        <h2 className="text-4xl font-bold text-[#808080] my-10 flex">Memos received</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {memos.map((memo, idx) => {
             const time = memo.timestamp.toLocaleString();
             return (
               <div key={idx} className="rounded-lg shadow-lg p-4 white-glassmorphism">
-                <p className="text-lg mb-2">"{memo.message}"</p>
-                <p className="text-[#6F4E37]">
+                <p className="text-lg mb-2 text-white">"{memo.message}"</p>
+                <p className="text-[#808080]">
                   From: {memo.name} at {time}
                 </p>
               </div>
@@ -185,8 +186,8 @@ return (
       </div>
     )}
   {/* <!-- Footer Section --> */}
-  <footer className="fixed bottom-0 left-0 right-0 bg-gray-800 text-white py-1 text-center">
-    <a href="https://github.com/ashoksivakoti" target="_blank" rel="noopener noreferrer" className="text-white">
+  <footer className="fixed bottom-0 left-0 right-0 bg-black py-1 text-center">
+    <a href="https://github.com/ashoksivakoti" target="_blank" rel="noopener noreferrer" className="text-[#808080]">
       Created by @ashoksivakoti
     </a>
   </footer>
