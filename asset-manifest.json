@@ -1,15 +1,14 @@
 {
   "files": {
     "main.css": "/buyMeACoffee/static/css/main.88cd7e64.css",
-    "main.js": "/buyMeACoffee/static/js/main.bacec210.js",
+    "main.js": "/buyMeACoffee/static/js/main.bec8fe0f.js",
     "static/media/coffeeLogo.png": "/buyMeACoffee/static/media/coffeeLogo.9d5e2592224268176fb4.png",
-    "static/media/coffee.png": "/buyMeACoffee/static/media/coffee.47279742d56a73796794.png",
     "index.html": "/buyMeACoffee/index.html",
     "main.88cd7e64.css.map": "/buyMeACoffee/static/css/main.88cd7e64.css.map",
-    "main.bacec210.js.map": "/buyMeACoffee/static/js/main.bacec210.js.map"
+    "main.bec8fe0f.js.map": "/buyMeACoffee/static/js/main.bec8fe0f.js.map"
   },
   "entrypoints": [
     "static/css/main.88cd7e64.css",
-    "static/js/main.bacec210.js"
+    "static/js/main.bec8fe0f.js"
   ]
 }
